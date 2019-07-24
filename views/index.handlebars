@@ -1,21 +1,19 @@
 <div id="home">
-  <div class="container">
+  <div class="container-fluid">
+    {{!-- Title --}}
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
+      <div class="col-md" id="title">
+        {{!-- <h1>{{msg}}</h1> --}}
+        <h2 id="whiteText">clean<span id="greyText">House</span></h2>
+      </div>
+    </div>
+
+    {{!-- Main Body --}}
+    <div class="row" id="title">
+      <div class="col"></div>
+      {{!-- Left column for scores --}}
+      <div class="col-md-5">
+        <h3 id="whiteText">chore<span id="greyText">Schores:</span></h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
@@ -25,9 +23,44 @@
           {{/each}}
         </ul>
       </div>
+      <div class="col-md-5">
+        <div class="form-group">
+          <label for="example-text" id="greyText"><span id="whiteText">Enter</span> your name</label>
+          <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
+            placeholder="Enter Name">
+          <br>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1" id="greyText"><span id="whiteText">Select</span> a chore</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Kitchen</option>
+              <option>Living Room</option>
+              <option>Bathroom</option>
+              <option>Bedroom 1</option>
+              <option>Bedroom 2</option>
+              <option>Bedroom 3</option>
+              <option>Hallway</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-secondary" type="submit" id="whiteText">S<span id="submitText">ubmit</span></button>
+      </div>
+      </form>
+      <div class="col"></div>
+    </div>
+    <div class="row" id="title">
+      <div class="col"></div>
+      <div class="col" id="whiteText">S<span id="greyText">unday</span></div>
+      <div class="col" id="whiteText">M<span id="greyText">onday</span></div>
+      <div class="col" id="whiteText">T<span id="greyText">uesday</span></div>
+      <div class="col" id="whiteText">W<span id="greyText">ednesday</span></div>
+      <div class="col" id="whiteText">T<span id="greyText">hursday</span></div>
+      <div class="col" id="whiteText">F<span id="greyText">riday</span></div>
+      <div class="col" id="whiteText">S<span id="greyText">aturday</span></div>
+      <div class="col"></div>
     </div>
   </div>
 </div>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
