@@ -1,22 +1,20 @@
 <div id="home">
-  <div class="container">
+  <div class="container-fluid">
+    {{!-- Title --}}
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
+      <div class="col-md" id="title">
+        {{!-- <h1>{{msg}}</h1> --}}
+        <h2 id="whiteText"><img src="/img/broom.png" / class="titleImage">clean<span id="greyText">House</span></h2>
+      </div>
+    </div>
+
+    {{!-- Main Body --}}
+    <div class="row" id="title">
+      <div class="col"></div>
+      {{!-- Left column for scores --}}
+      <div class="col-md-5">
+        <h3 id="whiteText">chore<span id="greyText">Schores:</span></h3>
+        <ul id="leaderboard" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="example/{{this.id}}">{{this.text}}</a>
@@ -25,6 +23,66 @@
           {{/each}}
         </ul>
       </div>
+      <div class="col-md-5">
+        <div class="form-group">
+          <h3 id="greyText"><span id="whiteText">Enter</span> your name</h3>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="name">Name</span>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="name"
+              aria-describedby="basic-addon1">
+          </div>
+          <br>
+          <h3 id="greyText"><span id="whiteText">Select</span> a chore</h3>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Chores</label>
+            </div>
+            <select class="custom-select" id="choreChoice">
+              <option selected></option>
+              <option value="kitchen">Kitchen</option>
+              <option value="livingRoom">Living Room</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="bedroom1">Bedroom 1</option>
+              <option value="bedroom2">Bedroom 2</option>
+              <option value="bedroom3">Bedroom 3</option>
+              <option value="hallway">Hallway</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <h3 id="greyText"><span id="whiteText">Select</span> a day</h3>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Day</label>
+          </div>
+          <select class="custom-select" id="dayOfTheWeek">
+            <option selected></option>
+            <option value="1">Sunday</option>
+            <option value="2">Monday</option>
+            <option value="3">Tuesday</option>
+            <option value="4">Wednesday</option>
+            <option value="5">Thursday</option>
+            <option value="6">Friday</option>
+            <option value="7">Saturday</option>
+          </select>
+        </div>
+        <button class="btn btn-secondary" type="submit" id="whiteText">S<span id="submitText">ubmit</span></button>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="row" id="title">
+      <div class="col"></div>
+      <div class="col calendarDay" id="sunday"><span>S</span>unday</span></div>
+      <div class="col calendarDay" id="monday"><span>M</span>onday</span></div>
+      <div class="col calendarDay" id="tuesday"><span>T</span>uesday</span></div>
+      <div class="col calendarDay" id="wednesday"><span>W</span>ednesday</span></div>
+      <div class="col calendarDay" id="thursday"><span>T</span>hursday</span></div>
+      <div class="col calendarDay" id="friday"><span>F</span>riday</span></div>
+      <div class="col calendarDay" id="saturday"><span>S</span>aturday</span></div>
+      <div class="col"></div>
     </div>
   </div>
 </div>
