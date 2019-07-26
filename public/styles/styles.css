@@ -22,3 +22,12 @@ body {
 #greyText {
   color: grey;
 }
+
+.calendarDay {
+  font-size: 18px;
+  color:grey;
+}
+
+.calendarDay span {
+  color: white
+}
