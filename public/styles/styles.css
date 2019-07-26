@@ -1,3 +1,38 @@
+body {
+  background-color: rgb(230, 230, 230);
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+#title {
+  text-align: center;
+  padding: 10px;
+}
+
+#submitText {
+  color: rgb(199, 199, 199);
+}
+
+#whiteText {
+  color: white;
+}
+
+#greyText {
+  color: grey;
+}
+
+.calendarDay {
+  font-size: 18px;
+  color:grey;
+}
+
+.calendarDay span {
+  color: white
+}
+
+.titleImage {
+  width: 55px;
+  margin-right: 10px;
 }
