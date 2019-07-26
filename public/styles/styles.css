@@ -31,3 +31,8 @@ body {
 .calendarDay span {
   color: white
 }
+
+.titleImage {
+  width: 55px;
+  margin-right: 10px;
+}
