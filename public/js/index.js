@@ -97,7 +97,7 @@
 // // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick)
-$("#button-submit").on("click",function(event){
+$("#button-submit").unbind().click(function(event){
   event.preventDefault();
  var name = $("#name").val().trim() 
  var choreChoice = $("#choreChoice").val().trim() 
@@ -109,5 +109,8 @@ $("#button-submit").on("click",function(event){
  }
  $.ajax({url:"/api/chores",method:"POST",data:choreData}).then(function(){
   console.log("post it")
+  window.location.replace("/");
  })
+
 })
+
