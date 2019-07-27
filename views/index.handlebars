@@ -17,7 +17,7 @@
         <ul id="leaderboard" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            <a href="example/{{this.id}}">{{this.name}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
@@ -28,9 +28,9 @@
           <h3 id="greyText"><span id="whiteText">Enter</span> your name</h3>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="name">Name</span>
+              <span class="input-group-text" >Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="" aria-label="name"
+            <input id="name" type="text" class="form-control" placeholder="" aria-label="name"
               aria-describedby="basic-addon1">
           </div>
           <br>
@@ -68,7 +68,7 @@
             <option value="7">Saturday</option>
           </select>
         </div>
-        <button class="btn btn-secondary" type="submit" id="whiteText">S<span id="submitText">ubmit</span></button>
+        <button class="btn btn-secondary" type="submit" id="button-submit">S<span id="submitText">ubmit</span></button>
         </form>
       </div>
       <div class="col"></div>
