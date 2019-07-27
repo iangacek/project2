@@ -17,19 +17,23 @@ body {
 
 #whiteText {
   color: white;
+  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 }
 
 #greyText {
   color: grey;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .calendarDay {
   font-size: 18px;
   color:grey;
+  
 }
 
 .calendarDay span {
-  color: white
+  color: white;
+  /* text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey; */
 }
 
 .titleImage {

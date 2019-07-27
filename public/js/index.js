@@ -97,6 +97,7 @@ var handleDeleteBtnClick = function() {
 $(function() {
   $("#choreChoice").change(function() {
     $("#descriptionText").html($("#choreChoice :selected").text());
+    console.log(choreChoice.value);
   });
 });
 
