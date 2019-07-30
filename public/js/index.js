@@ -95,13 +95,13 @@ var handleDeleteBtnClick = function() {
 };
 
 const descriptions = [
-  "Value 0 description",
-  "Value 1 description",
-  "Value 2 description",
-  "Value 3 description",
-  "Value 4 description",
-  "Value 5 description",
-  "Value 6 description",
+  "Clean the sink. Empty and load dishwasher. Mop floor. Clean counter tops.",
+  "Vacuum, then mop floors. Dust coffee table. Organize TV area.",
+  "Clean toilet. Scrub and clean shower. Clean counter tops. Wash towels.",
+  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+  "Organize shoes. Vacuum, then mop floors.",
 ]
 
 $(function() {
