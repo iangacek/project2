@@ -101,12 +101,14 @@ var descriptions = [
   "Wash bed sheets. Vacuum floor. Organize clean clothes.",
   "Wash bed sheets. Vacuum floor. Organize clean clothes.",
   "Wash bed sheets. Vacuum floor. Organize clean clothes.",
-  "Organize shoes. Vacuum, then mop floors.",
-]
+  "Organize shoes. Vacuum, then mop floors."
+];
 
 $(function() {
   $("#choreChoice").change(function() {
-    $("#descriptionText").html("<li>" + descriptions[$("#choreChoice :selected")[0].index-1] + "</li>");
+    $("#descriptionText").html(
+      "<li>" + descriptions[$("#choreChoice :selected")[0].index - 1] + "</li>"
+    );
     console.log(choreChoice.value);
     console.log($("#choreChoice :selected"));
   });
