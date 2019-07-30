@@ -1,4 +1,4 @@
-# SpicyClams Chore Organizer
+# SpicyClams Chore-ganizer
 
 ## Overview
 
