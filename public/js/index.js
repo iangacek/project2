@@ -97,20 +97,71 @@
 // // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick)
-$("#button-submit").unbind().click(function(event){
-  event.preventDefault();
- var name = $("#name").val().trim() 
- var choreChoice = $("#choreChoice").val().trim() 
- var dayOfTheWeek = $("#dayOfTheWeek").val().trim() 
- var choreData = {
-   name: name,
-   chore: choreChoice,
-   day: dayOfTheWeek
- }
- $.ajax({url:"/api/chores",method:"POST",data:choreData}).then(function(){
-  console.log("post it")
-  window.location.replace("/");
- })
+$("#button-submit").unbind().click(function(event) {
+    event.preventDefault();
+    var name = $("#name").val().trim()
+    var choreChoice = $("#choreChoice").val().trim()
+    var dayOfTheWeek = $("#dayOfTheWeek").val().trim()
+    var choreData = {
+        name: name,
+        chore: choreChoice,
+        day: dayOfTheWeek
+    }
+    $.ajax({ url: "/api/chores", method: "POST", data: choreData }).then(function() {
+        console.log("post it")
+        window.location.replace("/");
+    })
 
 })
 
+var example = {
+    text: $exampleText.val().trim(),
+    description: $exampleDescription.val().trim()
+};
+
+if (!(example.text && example.description)) {
+    alert("You must enter an example text and description!");
+    return;
+}
+
+API.saveExample(example).then(function() {
+    refreshExamples();
+});
+
+$exampleText.val("");
+$exampleDescription.val("");
+};
+
+// handleDeleteBtnClick is called when an example's delete button is clicked
+// Remove the example from the db and refresh the list
+var handleDeleteBtnClick = function() {
+    var idToDelete = $(this)
+        .parent()
+        .attr("data-id");
+
+    API.deleteExample(idToDelete).then(function() {
+        refreshExamples();
+    });
+};
+
+const descriptions = [
+    "Clean the sink. Empty and load dishwasher. Mop floor. Clean counter tops.",
+    "Vacuum, then mop floors. Dust coffee table. Organize TV area.",
+    "Clean toilet. Scrub and clean shower. Clean counter tops. Wash towels.",
+    "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+    "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+    "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+    "Organize shoes. Vacuum, then mop floors.",
+]
+
+$(function() {
+    $("#choreChoice").change(function() {
+        $("#descriptionText").html("<li>" + descriptions[$("#choreChoice :selected")[0].index - 1] + "</li>");
+        console.log(choreChoice.value);
+        console.log($("#choreChoice :selected"));
+    });
+});
+
+// Add event listeners to the submit and delete buttons
+$submitBtn.on("click", handleFormSubmit);
+$exampleList.on("click", ".delete", handleDeleteBtnClick);
