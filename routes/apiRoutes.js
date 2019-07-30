@@ -10,6 +10,7 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/users", function(req, res) {
+    console.log(request)
     db.Users.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
@@ -21,11 +22,12 @@ module.exports = function(app) {
   });
 
   // Delete an example by id
-  app.delete("/api/users/:id", function(req, res) {
-    db.Users.destroy({ where: { id: req.params.id } }).then(function(
+  app.delete("/api/chores/:id", function(req, res) {
+    db.Chore.destroy({ where: { id: req.params.id } }).then(function(
       dbExample
     ) {
       res.json(dbExample);
+      console.log("deleted")
     });
   });
 };
