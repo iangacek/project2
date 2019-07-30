@@ -94,7 +94,7 @@ var handleDeleteBtnClick = function() {
   });
 };
 
-const descriptions = [
+var descriptions = [
   "Clean the sink. Empty and load dishwasher. Mop floor. Clean counter tops.",
   "Vacuum, then mop floors. Dust coffee table. Organize TV area.",
   "Clean toilet. Scrub and clean shower. Clean counter tops. Wash towels.",
