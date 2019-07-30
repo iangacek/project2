@@ -94,10 +94,21 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+const descriptions = [
+  "Value 0 description",
+  "Value 1 description",
+  "Value 2 description",
+  "Value 3 description",
+  "Value 4 description",
+  "Value 5 description",
+  "Value 6 description",
+]
+
 $(function() {
   $("#choreChoice").change(function() {
-    $("#descriptionText").html($("#choreChoice :selected").text());
+    $("#descriptionText").html("<li>" + descriptions[$("#choreChoice :selected")[0].index-1] + "</li>");
     console.log(choreChoice.value);
+    console.log($("#choreChoice :selected"));
   });
 });
 
