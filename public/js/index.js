@@ -94,6 +94,7 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+// Array and function to populate descriptions div
 var descriptions = [
   "Clean the sink. <li>Empty and load dishwasher. <li>Mop floor. <li> Empty fridge of old food. <li>Clean counter tops.",
   "Vacuum, then mop floors. <li>Clean couch. <li>Dust coffee table. <li>Organize TV area. <li>Dust ceiling fan.",
