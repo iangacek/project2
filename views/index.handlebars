@@ -23,7 +23,7 @@
           {{/each}}
         </ul>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-3">
         <div class="form-group">
           <h3 id="greyText"><span id="whiteText">Enter</span> your name</h3>
           <div class="input-group mb-3">
@@ -41,7 +41,7 @@
             </div>
             <select class="custom-select" id="choreChoice">
               <option selected></option>
-              <option value="kitchen">Kitchen</option>
+              <option title="This is the text of the tooltip" value="kitchen">Kitchen</option>
               <option value="livingRoom">Living Room</option>
               <option value="bathroom">Bathroom</option>
               <option value="bedroom1">Bedroom 1</option>
@@ -71,17 +71,20 @@
         <button class="btn btn-secondary" type="submit" id="whiteText">S<span id="submitText">ubmit</span></button>
         </form>
       </div>
+      <div class="col-md-2">
+        <div id="descriptionText"></div>
+      </div>
       <div class="col"></div>
     </div>
     <div class="row" id="title">
       <div class="col"></div>
-      <div class="col calendarDay" id="sunday"><span>S</span>unday</span></div>
-      <div class="col calendarDay" id="monday"><span>M</span>onday</span></div>
-      <div class="col calendarDay" id="tuesday"><span>T</span>uesday</span></div>
-      <div class="col calendarDay" id="wednesday"><span>W</span>ednesday</span></div>
-      <div class="col calendarDay" id="thursday"><span>T</span>hursday</span></div>
-      <div class="col calendarDay" id="friday"><span>F</span>riday</span></div>
-      <div class="col calendarDay" id="saturday"><span>S</span>aturday</span></div>
+      <div class="col calendarDay" id="sunday"><span>S</span>unday</div>
+      <div class="col calendarDay" id="monday"><span>M</span>onday</div>
+      <div class="col calendarDay" id="tuesday"><span>T</span>uesday</div>
+      <div class="col calendarDay" id="wednesday"><span>W</span>ednesday</div>
+      <div class="col calendarDay" id="thursday"><span>T</span>hursday</div>
+      <div class="col calendarDay" id="friday"><span>F</span>riday</div>
+      <div class="col calendarDay" id="saturday"><span>S</span>aturday</div>
       <div class="col"></div>
     </div>
   </div>

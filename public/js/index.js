@@ -94,6 +94,26 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+var descriptions = [
+  "Clean the sink. Empty and load dishwasher. Mop floor. Clean counter tops.",
+  "Vacuum, then mop floors. Dust coffee table. Organize TV area.",
+  "Clean toilet. Scrub and clean shower. Clean counter tops. Wash towels.",
+  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
+  "Organize shoes. Vacuum, then mop floors."
+];
+
+$(function() {
+  $("#choreChoice").change(function() {
+    $("#descriptionText").html(
+      "<li>" + descriptions[$("#choreChoice :selected")[0].index - 1] + "</li>"
+    );
+    console.log(choreChoice.value);
+    console.log($("#choreChoice :selected"));
+  });
+});
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
