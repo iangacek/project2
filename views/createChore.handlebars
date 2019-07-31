@@ -7,36 +7,34 @@
                 </h1>
             </div>
         </div>
-
         <div class="row" id="title">
-
-            {{!-- Main FAQ body --}}
+            {{!-- Main Chore Addition body --}}
+            {{!-- Spacing div --}}
             <div class="col-md-4"></div>
+            {{!-- Form for chore input --}}
             <div class="col-md">
                 <div class="form-group">
+                    {{!-- Chore name --}}
                     <h3 id="greyText"><span id="whiteText">Enter</span> chore name</h3>
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="newChoreName">Name</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" aria-label="name"
-                            aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="newChoreName">Name</span>
+                        <input type="text" class="form-control" placeholder="">
                     </div>
+                    {{!-- Chore description --}}
                     <h3 id="greyText"><span id="whiteText">Enter</span> chore description</h3>
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="newChoreDesc">Description</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" aria-label="name"
-                            aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="newChoreDesc">Description</span>
+                        <input type="text" class="form-control" placeholder="">
                     </div>
-                    <a href="/"><button class="btn btn-secondary" type="submit" id="whiteText">Submit<span id="submitText">
-                            chore</span></button></a>
+                    {{!-- Submit button --}}
+                    <a href="/"><button class="btn btn-secondary" type="submit" id="whiteText"
+                            onclick="submitChore()">Submit<span id="submitText">
+                                chore</span></button></a>
                 </div>
             </div>
+            {{!-- Spacing div --}}
             <div class="col-md-4"></div>
         </div>
-        <div class="col"></div>
     </div>
 </div>
 

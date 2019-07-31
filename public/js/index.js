@@ -94,7 +94,7 @@ var handleDeleteBtnClick = function() {
   });
 };
 
-// Array and function to populate descriptions div
+// Array of descriptions
 var descriptions = [
   "Clean the sink. <li>Empty and load dishwasher. <li>Mop floor. <li> Empty fridge of old food. <li>Clean counter tops.",
   "Vacuum, then mop floors. <li>Clean couch. <li>Dust coffee table. <li>Organize TV area. <li>Dust ceiling fan.",
@@ -105,6 +105,7 @@ var descriptions = [
   "Organize shoes. <li>Vacuum, then mop floors. <li>Dust window area."
 ];
 
+// Function that populates description div
 $(function() {
   $("#choreChoice").change(function() {
     $("#descriptionText").html(
@@ -115,12 +116,16 @@ $(function() {
   });
 });
 
+// $(function() {
+//   $("#createChore").prepend(descriptions)
+// })
+
 // Function to clear input fields - currently not functional
-$clearBtn.click(function() {
-  $(".form-group").val("");
-  $("#choreChoice").val("");
-  $("#dayOfTheWeek").val("");
-});
+// $clearBtn.click(function() {
+//   $(".form-group").val("");
+//   $("#choreChoice").val("");
+//   $("#dayOfTheWeek").val("");
+// });
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
