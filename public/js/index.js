@@ -114,6 +114,13 @@ $(function() {
   });
 });
 
+// Function to clear input fields - currently not functional
+$clearBtn.click(function() {
+  $(".form-group").val("");
+  $("#choreChoice").val("");
+  $("#dayOfTheWeek").val("");
+});
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
