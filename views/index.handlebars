@@ -12,7 +12,7 @@
       <div class="col"></div>
       {{!-- Left column for scores --}}
       <div class="col-md-3">
-        <h3 id="whiteText">chore<span id="greyText">Schores:</span></h3>
+        <h3 id="whiteText">chore<span id="greyText">Schores</span><span id="punctuation">:</span></h3>
         <ul id="leaderboard" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
@@ -74,7 +74,7 @@
         </div>
 
         {{!-- Submit button --}}
-        <button class="btn btn-secondary" type="submit" id="whiteText">S<span id="submitText">ubmit</span></button>
+        <button class="btn btn-secondary" type="submit" id="whiteText">Let's<span id="submitText"> go</span><span id="punctuation">!</span></button>
         <button class="btn btn-secondary" type="clear" id="whiteText">C<span id="submitText">lear</span></button>
         </form>
         <br>
