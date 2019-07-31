@@ -26,6 +26,10 @@ body {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
+#punctuation {
+  color: #06D6A0;
+}
+
 .calendarDay {
   font-size: 18px;
   color:grey;
