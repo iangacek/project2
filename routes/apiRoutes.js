@@ -9,13 +9,14 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/Chores", function(req, res) {
-        db.descriptions.findAll({}).then(function(dbDescriptions) {
+    // Displaying chore + name
+    app.get("/api/name", function(req, res) {
+        db.Chore.findAll({}).then(function(dbDescriptions) {
             res.json(dbDescriptions);
         });
     });
 
-    // Create a new user
+    // Create a new chore + name
     app.post("/api/name", function(req, res) {
         console.log(req)
         db.Chore.create(req.body).then(function(dbExample) {
