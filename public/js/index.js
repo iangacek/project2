@@ -95,13 +95,13 @@ var handleDeleteBtnClick = function() {
 };
 
 var descriptions = [
-  "Clean the sink. Empty and load dishwasher. Mop floor. Clean counter tops.",
-  "Vacuum, then mop floors. Dust coffee table. Organize TV area.",
-  "Clean toilet. Scrub and clean shower. Clean counter tops. Wash towels.",
-  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
-  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
-  "Wash bed sheets. Vacuum floor. Organize clean clothes.",
-  "Organize shoes. Vacuum, then mop floors."
+  "Clean the sink. <li>Empty and load dishwasher. <li>Mop floor. <li> Empty fridge of old food. <li>Clean counter tops.",
+  "Vacuum, then mop floors. <li>Clean couch. <li>Dust coffee table. <li>Organize TV area. <li>Dust ceiling fan.",
+  "Clean toilet. <li>Scrub and clean shower. <li>Clean counter tops. <li>Wash towels.",
+  "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
+  "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
+  "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
+  "Organize shoes. <li>Vacuum, then mop floors. <li>Dust window area."
 ];
 
 $(function() {

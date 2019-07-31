@@ -6,9 +6,10 @@ body {
   line-height: 2.5;
 }
 
+
 #title {
   text-align: center;
-  padding: 10px;
+  padding-top: 12px;
 }
 
 #submitText {
@@ -39,4 +40,10 @@ body {
 .titleImage {
   width: 55px;
   margin-right: 10px;
+}
+
+li {
+  list-style-image: url("../img/broomSmall.png");
+  color:grey;
+  padding: 5px;
 }
