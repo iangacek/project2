@@ -116,11 +116,11 @@ $(function() {
   });
 });
 
-// Adds description from createChore page to description array
-function createChore() {
+// // Adds description from createChore page to description array
+$("#createChore").click(function() {
   descriptions.push($("#newChoreDesc").val());
   console.log(descriptions);
-}
+});
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
