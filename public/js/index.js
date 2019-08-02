@@ -112,6 +112,8 @@ $(document).ready(function() {
     $(".delete").on("click", handleDeleteBtnClick);
     console.log("ready!");
 
+
+// If-Then statement targets user-day and appends input to targeted day-ID
     $('.list-group-item').each(function() {
         if ($(this).data('day') === 1) {
             $('#sundayChore').append($(this));

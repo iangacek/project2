@@ -16,7 +16,6 @@ module.exports = function(app) {
     });
 
     // Create a new chore + name
-
     app.post("/api/name", function(req, res) {
         db.Chore.create(req.body).then(function(dbExample) {
             res.json(dbExample);
