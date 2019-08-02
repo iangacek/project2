@@ -1,6 +1,5 @@
 var db = require("../models/index.js");
 
-
 module.exports = function(app) {
     // Get all examples
     app.get("/api/users", function(req, res) {
@@ -18,7 +17,7 @@ module.exports = function(app) {
 
     // Create a new chore + name
     app.post("/api/name", function(req, res) {
-        console.log(req)
+        console.log(req);
         db.Chore.create(req.body).then(function(dbExample) {
             res.json(dbExample);
         });
@@ -36,7 +35,7 @@ module.exports = function(app) {
             dbExample
         ) {
             res.json(dbExample);
-            console.log("deleted")
+            console.log("deleted");
         });
     });
 };
