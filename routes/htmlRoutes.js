@@ -11,15 +11,24 @@ module.exports = function(app) {
     });
   });
 
-  //   Load FAQ page
-  app.get("/faq", function(req, res) {
-    res.render("faq");
-  });
+    app.get("/faq", function(req, res) {
+        res.render("faq");
+    });
 
-  // Load createChore page
-  app.get("/createchore", function(req, res) {
-    res.render("createChore");
-  });
+    app.get("/createchore", function(req, res) {
+        res.render("createChore");
+    });
+
+    // Load example page and pass in an example by id
+    app.get("/chores/:id", function(req, res) {
+        db.Chore.findOne({ where: { id: req.params.id } }).then(function(
+            dbExample
+        ) {
+            res.render("example", {
+                example: dbExample
+            });
+        });
+    });
 
   // Load example page and pass in an example by id
   app.get("/chores/:id", function(req, res) {

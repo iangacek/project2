@@ -16,8 +16,8 @@ module.exports = function(app) {
     });
 
     // Create a new chore + name
+
     app.post("/api/name", function(req, res) {
-        console.log(req);
         db.Chore.create(req.body).then(function(dbExample) {
             res.json(dbExample);
         });
@@ -28,9 +28,9 @@ module.exports = function(app) {
         });
     });
 
+
     // Delete a chore by id
     app.delete("/api/chore/:id", function(req, res) {
-        console.log("HITTTT");
         db.Chore.destroy({ where: { id: req.params.id } }).then(function(
             dbExample
         ) {
