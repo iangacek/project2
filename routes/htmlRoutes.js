@@ -11,10 +11,12 @@ module.exports = function(app) {
     });
   });
 
+  //   Load FAQ page
   app.get("/faq", function(req, res) {
     res.render("faq");
   });
 
+  // Load createChore page
   app.get("/createchore", function(req, res) {
     res.render("createChore");
   });
