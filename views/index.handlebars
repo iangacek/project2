@@ -15,12 +15,7 @@
       <div class="col-md-3">
         <h3 id="whiteText">chore<span id="greyText">Schores</span><span id="punctuation">:</span></h3>
         <ul id="leaderboard" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
+
         </ul>
       </div>
 
@@ -30,9 +25,10 @@
           <h3 id="greyText"><span id="whiteText">Enter</span> your name</h3>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="name">Name</span>
+              <span class="input-group-text">Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="" aria-label="name" aria-describedby="basic-addon1">
+            <input id="name" type="text" class="form-control" placeholder="" aria-label="name"
+              aria-describedby="basic-addon1">
           </div>
           <br>
 
@@ -73,10 +69,7 @@
             <option value="7">Saturday</option>
           </select>
         </div>
-
-        {{!-- Submit button --}}
-        <button class="btn btn-secondary" type="submit" id="whiteText">Let's<span id="submitText"> go</span><span
-            id="punctuation">!</span></button>
+        <button class="btn btn-secondary" type="submit" id="button-submit">S<span id="submitText">ubmit</span></button>
         <button class="btn btn-secondary" type="clear" id="whiteText">C<span id="submitText">lear</span></button>
         </form>
         <br>
@@ -85,7 +78,6 @@
         {{!-- Create a chore link --}}
         <a href="/createchore" id="whiteText">Create a chore</a>
       </div>
-
       {{!-- Div that displays chore responsibilities --}}
       <div class="col-md-3">
         <h3 id="whiteText">chore<span id="greyText">Responsibilities</span></h3>
@@ -109,6 +101,25 @@
       <div class="col calendarDay" id="thursday"><span>T</span>hursday</div>
       <div class="col calendarDay" id="friday"><span>F</span>riday</div>
       <div class="col calendarDay" id="saturday"><span>S</span>aturday</div>
+      <div class="col"></div>
+    </div>
+    {{!-- Names and chores will display here --}}
+    <div class="row" id="choreDisplay">
+      <div class="col"></div>
+      <div class="col" id="sundayChore">
+        {{#each examples}}
+        <li data-id="{{this.id}}" class="list-group-item">
+          <a href="example/{{this.id}}">{{this.name}} {{this.chore}}</a>
+          <button class="btn btn-danger float-right delete">ｘ</button>
+        </li>
+        {{/each}}
+      </div>
+      <div class="col" id="mondayChore"></div>
+      <div class="col" id="tuesdayChore"></div>
+      <div class="col" id="wednesdayChore"></div>
+      <div class="col" id="thursdayChore"></div>
+      <div class="col" id="fridayChore"></div>
+      <div class="col" id="saturdayChore"></div>
       <div class="col"></div>
     </div>
   </div>

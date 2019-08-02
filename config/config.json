@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "spicyclams",
+    "database": "projectDB",
     "host": "localhost",
     "dialect": "mysql"
   },
@@ -19,3 +19,4 @@
     "dialect": "mysql"
   }
 }
+

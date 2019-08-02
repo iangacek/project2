@@ -1,34 +1,41 @@
-var db = require("../models");
+var db = require("../models/index.js");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    // Get all examples
+    app.get("/api/users", function(req, res) {
+        db.Users.findAll({}).then(function(dbExamples) {
+            res.json(dbExamples);
+        });
     });
-  });
 
-  app.get("/api/descriptions", function(req, res) {
-    db.descriptions.findAll({}).then(function(dbDescriptions) {
-      res.json(dbDescriptions);
+    // Displays chore + name
+    app.get("/api/name", function(req, res) {
+        db.Chore.findAll({}).then(function(dbDescriptions) {
+            res.json(dbDescriptions);
+        });
     });
-  });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    // Create a new chore + name
+    app.post("/api/name", function(req, res) {
+        console.log(req);
+        db.Chore.create(req.body).then(function(dbExample) {
+            res.json(dbExample);
+        });
     });
-  });
+    app.post("/api/chore", function(req, res) {
+        db.Chore.create(req.body).then(function(dbExample) {
+            res.json(dbExample);
+        });
+    });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbExample) {
-      res.json(dbExample);
+    // Delete a chore by id
+    app.delete("/api/chore/:id", function(req, res) {
+        console.log("HITTTT");
+        db.Chore.destroy({ where: { id: req.params.id } }).then(function(
+            dbExample
+        ) {
+            res.json(dbExample);
+            console.log("deleted");
+        });
     });
-  });
 };
