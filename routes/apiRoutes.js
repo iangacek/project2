@@ -9,7 +9,7 @@ module.exports = function(app) {
         });
     });
 
-    // Displaying chore + name
+    // Displays chore + name
     app.get("/api/name", function(req, res) {
         db.Chore.findAll({}).then(function(dbDescriptions) {
             res.json(dbDescriptions);
@@ -29,8 +29,9 @@ module.exports = function(app) {
         });
     });
 
-    // Delete an example by id
-    app.delete("/api/chores/:id", function(req, res) {
+    // Delete a chore by id
+    app.delete("/api/chore/:id", function(req, res) {
+        console.log("HITTTT");
         db.Chore.destroy({ where: { id: req.params.id } }).then(function(
             dbExample
         ) {

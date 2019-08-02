@@ -23,7 +23,7 @@ var API = {
     },
     deleteExample: function(id) {
         return $.ajax({
-            url: "api/examples/" + id,
+            url: "api/chore/" + id,
             type: "DELETE"
         });
     }
@@ -75,11 +75,12 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
+    console.log("HITTT")
     var idToDelete = $(this)
         .parent()
         .attr("data-id");
     API.deleteExample(idToDelete).then(function() {
-        refreshExamples();
+        // refreshExamples();
         location.reload();
     });
 };
@@ -103,4 +104,7 @@ $(function() {
 });
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$(document).ready(function() {
+    $(".delete").on("click", handleDeleteBtnClick)
+    console.log("ready!");
+});
