@@ -11,6 +11,14 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/faq", function(req, res) {
+        res.render("faq");
+    });
+
+    app.get("/createchore", function(req, res) {
+        res.render("createChore");
+    });
+
     // Load example page and pass in an example by id
     app.get("/chores/:id", function(req, res) {
         db.Chore.findOne({ where: { id: req.params.id } }).then(function(

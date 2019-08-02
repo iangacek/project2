@@ -1,6 +1,8 @@
 // Get references to page elements
+console.log("INDEX.JS");
 var $userName = $("#name");
 var $userChore = $("#choreChoice");
+var $userDay = $("#dayOfTheWeek");
 var $submitBtn = $("#submitText");
 var $exampleList = $("#example-list");
 // The API object contains methods for each kind of request we'll make
@@ -32,20 +34,22 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list. "examples" defines our handlebars chore output.
 var refreshExamples = function() {
     API.getExamples().then(function(data) {
-        console.log(data)
+        console.log(data);
         var $examples = data.map(function(example) {
+            console.log(example);
             var $a = $("<a>")
                 .text(example.text)
                 .attr("href", "/example/" + example.id);
             var $li = $("<li>")
                 .attr({
                     class: "list-group-item",
-                    "data-id": example.id
+                    "data-id": example.id,
+                    "data-day": example.day
                 })
                 .append($a);
             var $button = $("<button>")
                 .addClass("btn btn-danger float-right delete")
-                .text("ｘ");
+                .text("DEL");
             $li.append($button);
             return $li;
         });
@@ -59,7 +63,8 @@ var handleFormSubmit = function(event) {
     event.preventDefault();
     var name = {
         name: $userName.val().trim(),
-        chore: $userChore.val().trim()
+        chore: $userChore.val().trim(),
+        day: $userDay.val().trim()
     };
     if (!(name.name && name.chore)) {
         alert("You must enter an name text and description!");
@@ -75,7 +80,6 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
-    console.log("HITTT")
     var idToDelete = $(this)
         .parent()
         .attr("data-id");
@@ -99,12 +103,30 @@ $(function() {
             "<li>" + descriptions[$("#choreChoice :selected")[0].index - 1] + "</li>"
         );
         console.log(choreChoice.value);
-        console.log($("#choreChoice :selected"));
+        // console.log($("#choreChoice :selected"));
     });
 });
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $(document).ready(function() {
-    $(".delete").on("click", handleDeleteBtnClick)
+    $(".delete").on("click", handleDeleteBtnClick);
     console.log("ready!");
+
+    $('.list-group-item').each(function() {
+        if ($(this).data('day') === 1) {
+            $('#sundayChore').append($(this));
+        } else if ($(this).data('day') === 2) {
+            $('#mondayChore').append($(this));
+        } else if ($(this).data('day') === 3) {
+            $('#tuesdayChore').append($(this));
+        } else if ($(this).data('day') === 4) {
+            $('#wednesdayChore').append($(this));
+        } else if ($(this).data('day') === 5) {
+            $('#thursdayChore').append($(this));
+        } else if ($(this).data('day') === 6) {
+            $('#fridayChore').append($(this));
+        } else if ($(this).data('day') === 7) {
+            $('#saturdayChore').append($(this));
+        }
+    });
 });

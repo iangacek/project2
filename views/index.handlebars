@@ -108,7 +108,7 @@
       <div class="col"></div>
       <div class="col" id="sundayChore">
         {{#each examples}}
-        <li data-id="{{this.id}}" class="list-group-item">
+        <li data-id="{{this.id}}" data-day="{{this.day}}" class="list-group-item">
           <a href="example/{{this.id}}">{{this.name}} {{this.chore}}</a>
           <button class="btn btn-danger float-right delete">ｘ</button>
         </li>
