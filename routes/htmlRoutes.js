@@ -3,7 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
     // Load index page
     app.get("/", function(req, res) {
-        db.Chore.findAll({}).then(function(dbExamples) {
+        db.Name
+        .findAll({}).then(function(dbExamples) {
             res.render("index", {
                 // msg: "Welcome!",
                 examples: dbExamples
@@ -21,7 +22,7 @@ module.exports = function(app) {
 
     // Load example page and pass in an example by id
     app.get("/chores/:id", function(req, res) {
-        db.Chore.findOne({ where: { id: req.params.id } }).then(function(
+        db.Name.findOne({ where: { id: req.params.id } }).then(function(
             dbExample
         ) {
             res.render("example", {

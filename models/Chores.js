@@ -1,9 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-    var Chore = sequelize.define("Chore", {
-        name: DataTypes.STRING,
-        // chore: DataTypes.STRING,
-        // description: DataTypes.STRING,
-        day: DataTypes.STRING
-    });
-    return Chore;
+  var Chore = sequelize.define("Chores", {
+    chore: DataTypes.STRING,
+    description: DataTypes.STRING
+  });
+  return Chore;
 };

@@ -10,19 +10,19 @@ module.exports = function(app) {
 
     // Displays chore + name
     app.get("/api/name", function(req, res) {
-        db.Chore.findAll({}).then(function(dbDescriptions) {
+        db.Name.findAll({}).then(function(dbDescriptions) {
             res.json(dbDescriptions);
         });
     });
 
     // Create a new chore + name
     app.post("/api/name", function(req, res) {
-        db.Chore.create(req.body).then(function(dbExample) {
+        db.Name.create(req.body).then(function(dbExample) {
             res.json(dbExample);
         });
     });
     app.post("/api/chore", function(req, res) {
-        db.Chore.create(req.body).then(function(dbExample) {
+        db.Name.create(req.body).then(function(dbExample) {
             res.json(dbExample);
         });
     });
@@ -30,7 +30,7 @@ module.exports = function(app) {
 
     // Delete a chore by id
     app.delete("/api/chore/:id", function(req, res) {
-        db.Chore.destroy({ where: { id: req.params.id } }).then(function(
+        db.Name.destroy({ where: { id: req.params.id } }).then(function(
             dbExample
         ) {
             res.json(dbExample);
