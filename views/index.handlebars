@@ -15,12 +15,7 @@
       <div class="col-md-3">
         <h3 id="whiteText">chore<span id="greyText">Schores</span><span id="punctuation">:</span></h3>
         <ul id="leaderboard" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.name}}    {{this.chore}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
+
         </ul>
       </div>
 
@@ -111,7 +106,14 @@
     {{!-- Names and chores will display here --}}
     <div class="row" id="choreDisplay">
       <div class="col"></div>
-      <div class="col" id="sundayChore">{{this.examples}}</div>
+      <div class="col" id="sundayChore">
+                  {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.name}}    {{this.chore}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </div>
       <div class="col" id="mondayChore"></div>
       <div class="col" id="tuesdayChore"></div>
       <div class="col" id="wednesdayChore"></div>

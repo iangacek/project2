@@ -17,7 +17,7 @@ var API = {
     },
     getExamples: function() {
         return $.ajax({
-            url: "api/examples",
+            url: "api/name",
             type: "GET"
         });
     },
@@ -28,9 +28,11 @@ var API = {
         });
     }
 };
-// refreshExamples gets new examples from the db and repopulates the list
+
+// refreshExamples gets new examples from the db and repopulates the list. "examples" defines our handlebars chore output.
 var refreshExamples = function() {
     API.getExamples().then(function(data) {
+        console.log(data)
         var $examples = data.map(function(example) {
             var $a = $("<a>")
                 .text(example.text)
@@ -65,6 +67,7 @@ var handleFormSubmit = function(event) {
     }
     API.saveExample(name).then(function() {
         refreshExamples();
+        location.reload();
     });
     $userName.val("");
     $userChore.val("");
@@ -77,6 +80,7 @@ var handleDeleteBtnClick = function() {
         .attr("data-id");
     API.deleteExample(idToDelete).then(function() {
         refreshExamples();
+        location.reload();
     });
 };
 var descriptions = [
