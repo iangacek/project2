@@ -112,12 +112,14 @@
         {{#each examples}}
         <li data-id="{{this.id}}" data-day="{{this.day}}" class="list-group-item">
           <a href="example/{{this.id}}">{{this.name}} {{this.chore}}</a>
-          <button class="btn btn-danger float-right delete">ｘ</button>
-        </li>
-        {{/each}}
+              <button class="btn btn-danger btn-s" id="calendarStyle">x</button>
+          </li>
+          {{/each}}
       </div>
-      <div class="col" id="mondayChore"></div>
-      <div class="col" id="tuesdayChore"></div>
+      
+        <div class="col" id="mondayChore"></div>
+    
+    <div class="col" id="tuesdayChore"></div>
       <div class="col" id="wednesdayChore"></div>
       <div class="col" id="thursdayChore"></div>
       <div class="col" id="fridayChore"></div>

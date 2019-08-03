@@ -48,7 +48,7 @@ var refreshExamples = function() {
         })
         .append($a);
       var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
+        .addClass("btn btn-primary float-right delete")
         .text("DEL");
       $li.append($button);
       return $li;
@@ -68,7 +68,9 @@ var handleFormSubmit = function(event) {
   };
 
   if (!(name.name && name.ChoreId)) {
-    alert("You must enter an name text and description!");
+    alert(
+      "You must enter a name, select a chore, and pick a day to do your chore!"
+    );
     return;
   }
   API.saveExample(name).then(function() {
