@@ -84,7 +84,7 @@ var handleDeleteBtnClick = function() {
     var idToDelete = $(this)
         .parent()
         .attr("data-id");
-        console.log(idToDelete);
+    console.log(idToDelete);
     API.deleteExample(idToDelete).then(function() {
         // refreshExamples();
         location.reload();
@@ -115,26 +115,25 @@ $(function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $(document).ready(function() {
-    $(".delete").on("click", 
-    );
+    $(".delete").on("click", );
     console.log("ready!");
-    
-console.log(descriptions)
-// Targets chore-dropdown to display /api/chore-data
-    $.get("/api/chore").then(function(data){
+
+    console.log(descriptions)
+        // Targets chore-dropdown to display /api/chore-data
+    $.get("/api/chore").then(function(data) {
         console.log(data);
-        for(var i = 0; i < data.length; i++){
+        for (var i = 0; i < data.length; i++) {
             var id = data[i].id;
             var chore = data[i].chore;
             var newOption = $("<option>");
-                newOption.attr("value",id);
-                newOption.text(chore);
-        $("#choreChoice").append(newOption);
-        descriptions.push(data[i].description);
+            newOption.attr("value", id);
+            newOption.text(chore);
+            $("#choreChoice").append(newOption);
+            descriptions.push(data[i].description);
         }
     })
 
-// If-Then statement targets user-day and appends input to targeted day-ID
+    // If-Then statement targets user-day and appends input to targeted day-ID
     $('.list-group-item').each(function() {
         if ($(this).data('day') === 1) {
             $('#sundayChore').append($(this));
@@ -153,15 +152,15 @@ console.log(descriptions)
         }
     });
 
-// Create chore
-    $("#addChoreButton").on("click",function(){
+    // Create chore
+    $("#addChoreButton").on("click", function() {
         // Variable stores chore-input
         var choreData = {
-                        chore:$("#choreName").val(),
-                        description:$("#newChoreDesc").val()
-                        }
-                        console.log(choreData);
+            chore: $("#choreName").val(),
+            description: $("#newChoreDesc").val()
+        }
+        console.log(choreData);
 
-        $.post("/api/chore",choreData)
+        $.post("/api/chore", choreData)
     })
 });
