@@ -8,33 +8,42 @@ module.exports = function(app) {
         });
     });
 
-    // Displays chore + name
+    // Displays name
     app.get("/api/name", function(req, res) {
-        db.Name.findAll({}).then(function(dbDescriptions) {
+        db.Names.findAll({}).then(function(dbDescriptions) {
             res.json(dbDescriptions);
         });
     });
 
-    // Create a new chore + name
-    app.post("/api/name", function(req, res) {
-        db.Name.create(req.body).then(function(dbExample) {
-            res.json(dbExample);
+    // Displays chore
+    app.get("/api/chore", function(req, res) {
+        db.Chores.findAll({}).then(function(dbDescriptions) {
+            res.json(dbDescriptions);
         });
     });
-    app.post("/api/chore", function(req, res) {
-        db.Name.create(req.body).then(function(dbExample) {
+
+    // Create new name
+    app.post("/api/name", function(req, res) {
+        db.Names.create(req.body).then(function(dbExample) {
             res.json(dbExample);
         });
     });
 
+    // Create new chore
+    app.post("/api/chore", function(req, res) {
+        db.Chores.create(req.body).then(function(dbExample) {
+            res.json(dbExample);
+        });
+    });
 
     // Delete a chore by id
     app.delete("/api/chore/:id", function(req, res) {
-        db.Name.destroy({ where: { id: req.params.id } }).then(function(
+        db.Chores.destroy({ where: { id: req.params.id } }).then(function(
             dbExample
         ) {
             res.json(dbExample);
             console.log("deleted");
         });
     });
+
 };

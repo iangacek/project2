@@ -18,7 +18,7 @@
                     <h3 id="greyText"><span id="whiteText">Enter</span> chore name</h3>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="newChoreName">Name</span>
-                        <input type="text" class="form-control" placeholder="">
+                        <input type="text" class="form-control" id = "choreName" placeholder="">
                     </div>
                     {{!-- Chore description --}}
                     <h3 id="greyText"><span id="whiteText">Enter</span> chore description</h3>
@@ -26,8 +26,9 @@
                         <span class="input-group-text">Description</span>
                         <input type="text" class="form-control" placeholder="" id="newChoreDesc">
                     </div>
-                    {{!-- Submit button --}}
-                    <button class="btn btn-secondary" type="submit" id="createChore">Submit<span id="submitText">
+                    {{!-- Create Chore button --}}
+                    <button class="btn btn-secondary" type="submit" id="addChoreButton">Create 
+                    {{!-- <span id="submitText"> --}}
                             chore</span></button>
                             <br>
                             {{!-- Home button --}}

@@ -89,14 +89,15 @@ var handleDeleteBtnClick = function() {
     });
 };
 var descriptions = [
-    "Clean the sink. <li>Empty and load dishwasher. <li>Mop floor. <li> Empty fridge of old food. <li>Clean counter tops.",
-    "Vacuum, then mop floors. <li>Clean couch. <li>Dust coffee table. <li>Organize TV area. <li>Dust ceiling fan.",
-    "Clean toilet. <li>Scrub and clean shower. <li>Clean counter tops. <li>Wash towels.",
-    "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
-    "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
-    "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
-    "Organize shoes. <li>Vacuum, then mop floors. <li>Dust window area."
+    // "Clean the sink. <li>Empty and load dishwasher. <li>Mop floor. <li> Empty fridge of old food. <li>Clean counter tops.",
+    // "Vacuum, then mop floors. <li>Clean couch. <li>Dust coffee table. <li>Organize TV area. <li>Dust ceiling fan.",
+    // "Clean toilet. <li>Scrub and clean shower. <li>Clean counter tops. <li>Wash towels.",
+    // "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
+    // "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
+    // "Wash bed sheets. <li>Vacuum floor. <li>Wash dirty clothes. <li>Organize clean clothes. <li>Dust window area.",
+    // "Organize shoes. <li>Vacuum, then mop floors. <li>Dust window area."
 ];
+
 $(function() {
     $("#choreChoice").change(function() {
         $("#descriptionText").html(
@@ -106,12 +107,27 @@ $(function() {
         // console.log($("#choreChoice :selected"));
     });
 });
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $(document).ready(function() {
     $(".delete").on("click", handleDeleteBtnClick);
     console.log("ready!");
-
+    
+console.log(descriptions)
+// Targets chore-dropdown to display /api/chore-data
+    $.get("/api/chore").then(function(data){
+        console.log(data);
+        for(var i = 0; i < data.length; i++){
+            var id = data[i].id;
+            var chore = data[i].chore;
+            var newOption = $("<option>");
+                newOption.attr("value",id);
+                newOption.text(chore);
+        $("#choreChoice").append(newOption);
+        descriptions.push(data[i].description);
+        }
+    })
 
 // If-Then statement targets user-day and appends input to targeted day-ID
     $('.list-group-item').each(function() {
@@ -131,4 +147,16 @@ $(document).ready(function() {
             $('#saturdayChore').append($(this));
         }
     });
+
+// Create chore
+    $("#addChoreButton").on("click",function(){
+        // Variable stores chore-input
+        var choreData = {
+                        chore:$("#choreName").val(),
+                        description:$("#newChoreDesc").val()
+                        }
+                        console.log(choreData);
+
+        $.post("/api/chore",choreData)
+    })
 });
