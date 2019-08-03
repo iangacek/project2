@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "purpleChairs",
-    "database": "blogger",
+    "password": null,
+    "database": "projectDB",
     "host": "localhost",
     "dialect": "mysql"
   },
