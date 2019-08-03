@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     // Displays name
     app.get("/api/name", function(req, res) {
-        db.Names.findAll({}).then(function(dbDescriptions) {
+        db.Names.findAll({include:[db.Chores]}).then(function(dbDescriptions) {
             res.json(dbDescriptions);
         });
     });
@@ -38,7 +38,7 @@ module.exports = function(app) {
 
     // Delete a chore by id
     app.delete("/api/chore/:id", function(req, res) {
-        db.Chores.destroy({ where: { id: req.params.id } }).then(function(
+        db.Names.destroy({ where: { id: req.params.id } }).then(function(
             dbExample
         ) {
             res.json(dbExample);

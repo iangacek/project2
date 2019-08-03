@@ -63,10 +63,11 @@ var handleFormSubmit = function(event) {
     event.preventDefault();
     var name = {
         name: $userName.val().trim(),
-        chore: $userChore.val().trim(),
+        ChoreId: $userChore.val().trim(),
         day: $userDay.val().trim()
     };
-    if (!(name.name && name.chore)) {
+
+    if (!(name.name && name.ChoreId)) {
         alert("You must enter an name text and description!");
         return;
     }
@@ -83,11 +84,14 @@ var handleDeleteBtnClick = function() {
     var idToDelete = $(this)
         .parent()
         .attr("data-id");
+        console.log(idToDelete);
     API.deleteExample(idToDelete).then(function() {
         // refreshExamples();
         location.reload();
     });
 };
+
+// Array where descriptions will be displayed
 var descriptions = [
     // "Clean the sink. <li>Empty and load dishwasher. <li>Mop floor. <li> Empty fridge of old food. <li>Clean counter tops.",
     // "Vacuum, then mop floors. <li>Clean couch. <li>Dust coffee table. <li>Organize TV area. <li>Dust ceiling fan.",
@@ -111,7 +115,8 @@ $(function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $(document).ready(function() {
-    $(".delete").on("click", handleDeleteBtnClick);
+    $(".delete").on("click", 
+    );
     console.log("ready!");
     
 console.log(descriptions)
