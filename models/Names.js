@@ -5,7 +5,6 @@ module.exports = function(sequelize, DataTypes) {
         // description: DataTypes.STRING,
         day: DataTypes.STRING
     });
-
     Name.associate = function(models) {
     Name.belongsTo(models.Chores, {
     });
