@@ -1,8 +1,14 @@
-# SpicyClams Chore-ganizer
+# cleanHouse Chore-ganizer
+
+This is a Node.js application that utilizes a MongoDB back-end to look up and save household chores for multiple tenants in a home.
 
 ## Overview
 
+The cleanHouse application was created to assist in streamlining chore responsibilities for households with multiple tenants or family members. cleanHouse utilizes a mySQL backend database to store users, days, and chores for a specific household.
+
 ## Organization
+
+cleanHouse primarily runs from the `index.js` jQuery file located in the `js` folder. It is supported by jQuery models in `models`, API routes in `routes`, and the express.js server in `server.js`.
 
 ## Screenshots
 
@@ -27,4 +33,3 @@ Then, navigate to `https://spicyclams.herokuapp.com` or `http://localhost:3000/`
 [mysql](https://www.npmjs.com/package/mysql)
 
 [node](https://www.npmjs.com/package/node)
-
